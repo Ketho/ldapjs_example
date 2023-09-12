@@ -24,3 +24,15 @@ sudo apt install ldap-utils
 # install ldapjs
 npm install ldapjs
 ```
+
+## Test
+Start the LDAP server
+```sh
+sudo node example.js
+```
+
+Invoke ldapadd
+```sh
+sudo ldapadd -H ldap://localhost:1389 -x -D cn=root -w secret -f ./user.ldif
+adding new entry "cn=ldapjs, ou=users, o=myhost"
+```
