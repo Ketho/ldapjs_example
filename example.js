@@ -8,6 +8,8 @@ server.bind('cn=root', (req, res, next) => {
 
 server.add('ou=users, o=myhost', [], (req, res, next) => {
   console.log(req.dn); // this is an empty object for me
+  res.end();
+  return next();
 });
 
 server.listen(1389, '127.0.0.1', () => {
